@@ -30,7 +30,7 @@ io.on('connection', (socket) => {
   socket.on('createMessage', ({from, text}, callback) => {
     console.log('createMessage', {from, text});
     io.emit('newMessage', generateMessage(from, text));
-    callback('This is from the server');
+    callback();
   });
 
   socket.on('disconnect', () => {
